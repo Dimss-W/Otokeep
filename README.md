@@ -1,4 +1,4 @@
-# 🚗 OtoKeep - Smart Vehicle Maintenance & Fleet Care Platform
+# OtoKeep - Smart Vehicle Maintenance & Fleet Care Platform
 
 <p align="center">
   <img src="public/assets/images/otokeep-logo-horizontal.png" alt="OtoKeep Logo" width="320">
@@ -10,23 +10,23 @@
 
 ---
 
-## 🌟 Fitur Unggulan Proyek
+## Fitur Unggulan Proyek
 
-1. **📱 Progressive Web App (PWA) Ready**
+1. **Progressive Web App (PWA) Ready**
    - Dapat di-install langsung ke layar utama (*Add to Home Screen*) di smartphone (Android / iOS) maupun PC desktop tanpa melalui Google Play / App Store.
    - Dilengkapi *Service Worker* dan halaman *offline mode* yang ramah.
-2. **📸 AI Speedometer / Odometer Scanner**
+2. **AI Speedometer / Odometer Scanner**
    - Pemindaian visual odometer riil kendaraan menggunakan kamera atau upload foto berbasis OCR AI cerdas untuk update KM otomatis.
-3. **🔔 Pengingat Servis Cerdas (Smart Maintenance Tracker)**
+3. **Pengingat Servis Cerdas (Smart Maintenance Tracker)**
    - Algoritma dinamis yang menghitung sisa jarak tempuh (KM) dan estimasi tanggal jatuh tempo penggantian komponen (Oli, Rem, CVT, Filter, Radiator, dll.).
    - Dilengkapi indikator status: *Prima*, *Mendekati Servis*, dan *Overdue / Perlu Servis*.
-4. **📄 Buku Servis Digital Resmi (Cetak / Ekspor PDF A4)**
+4. **Buku Servis Digital Resmi (Cetak / Ekspor PDF A4)**
    - Dokumen rekam jejak servis (*service record*) bersertifikat resmi berstandar A4 yang siap dicetak langsung atau disimpan menjadi PDF untuk menaikkan nilai jual kendaraan bekas.
-5. **💰 Personal Expense & Budget Tracker**
+5. **Personal Expense & Budget Tracker**
    - Rekapitulasi finansial perawatan kendaraan: Total biaya, pengeluaran tahun berjalan, grafik tren pengeluaran bulanan (Jan - Des), dan diagram donut alokasi biaya suku cadang.
-6. **🤖 Bang OTO (Asisten AI Mekanik Kendaraan)**
+6. **Bang OTO (Asisten AI Mekanik Kendaraan)**
    - Konsultasi teknis interaktif 24/7 seputar keluhan mesin, indikator speedometer, dan tips perawatan motor dan mobil.
-7. **📊 Admin Fleet Intelligence Dashboard**
+7. **Admin Fleet Intelligence Dashboard**
    - Dashboard analitik armada admin dengan pembaruan data *realtime auto-sync*:
      - KPI Total Pengguna & Unit Terdaftar
      - Grafik Garis Tren Pertumbuhan Armada (filter 7, 30, dan 90 hari)
@@ -37,7 +37,7 @@
 
 ---
 
-## 🛠️ Prasyarat Sistem (Prerequisites)
+## Prasyarat Sistem (Prerequisites)
 
 Sebelum memulai instalasi, pastikan lingkungan komputer / server Anda telah terpasang:
 - **PHP** >= 8.1 (dengan ekstensi `pdo_mysql`, `mbstring`, `openssl`, `tokenizer`, `xml`, `curl`)
@@ -48,7 +48,7 @@ Sebelum memulai instalasi, pastikan lingkungan komputer / server Anda telah terp
 
 ---
 
-## 🚀 Panduan Instalasi Langkah Demi Langkah (Step-by-Step)
+## Panduan Instalasi Langkah Demi Langkah (Step-by-Step)
 
 Ikuti langkah-langkah di bawah ini dari awal untuk menjalankan proyek Otokeep di komputer lokal Anda:
 
@@ -111,13 +111,13 @@ php artisan key:generate
 
 ### 6. Migrasi & Isi Database (Pilih Salah Satu Cara)
 
-#### 👉 Opsi A: Migrasi Skema Bersih + Seeder Bawaan (Direkomendasikan)
+#### Opsi A: Migrasi Skema Bersih + Seeder Bawaan (Direkomendasikan)
 Jalankan migrasi tabel dan seeding data akun default:
 ```bash
 php artisan migrate --seed
 ```
 
-#### 👉 Opsi B: Import Langsung File SQL Lengkap (Data Dummy Armada Lengkap)
+#### Opsi B: Import Langsung File SQL Lengkap (Data Dummy Armada Lengkap)
 Proyek ini sudah dilengkapi file database siap pakai di folder `database/db_otokeep.sql` (berisi 342 akun pengguna dummy, unit armada, dan riwayat servis riil):
 - **Lewat phpMyAdmin**: Buka database `db_otokeep` ➔ Tab **Import** ➔ Pilih file `database/db_otokeep.sql` ➔ Klik **Import / Go**.
 - **Atau Lewat Terminal**:
@@ -151,12 +151,12 @@ php artisan serve
 ```
 
 Aplikasi sekarang sudah aktif dan dapat dibuka melalui browser di:
-👉 **[http://127.0.0.1:8000](http://127.0.0.1:8000)**  
+**[http://127.0.0.1:8000](http://127.0.0.1:8000)**  
 *(Jika menggunakan Laragon dengan virtual host, bisa diakses melalui `http://otokeep.test`)*.
 
 ---
 
-## 🔐 Akun Default untuk Pengujian
+## Akun Default untuk Pengujian
 
 | Peran (Role) | Email | Password | Hak Akses |
 | :--- | :--- | :--- | :--- |
@@ -167,7 +167,7 @@ Aplikasi sekarang sudah aktif dan dapat dibuka melalui browser di:
 
 ---
 
-## 💡 Perintah Bantuan Tambahan
+## Perintah Bantuan Tambahan
 
 Jika terjadi kendala cache tampilan atau konfigurasi tidak terbaca:
 ```bash
@@ -180,7 +180,7 @@ npm run dev
 
 ---
 
-## 📄 Lisensi & Kontributor
+## Lisensi & Kontributor
 
 - **Repository**: [https://github.com/Dimss-W/Otokeep](https://github.com/Dimss-W/Otokeep)
 - **Author**: [Dimss-W](https://github.com/Dimss-W)
