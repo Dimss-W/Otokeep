@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="otokeepGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="50%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <rect width="128" height="128" rx="32" fill="url(#bgGrad)" stroke="#334155" stroke-width="2.5"/>
+  <path d="M 28 88 A 44 44 0 1 1 100 88" fill="none" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M 28 88 A 44 44 0 1 1 85 34" fill="none" stroke="url(#otokeepGrad)" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <circle cx="34" cy="50" r="3" fill="#64748B"/>
+  <circle cx="64" cy="24" r="3.5" fill="#F97316"/>
+  <circle cx="94" cy="50" r="3" fill="#64748B"/>
+  
+  <g transform="translate(64,68) rotate(-45)">
+    <path d="M -7 -28 L 7 -28 L 8 -16 L 15 -10 L 25 -10 L 25 10 L 15 10 L 8 16 L 7 28 L -7 28 L -8 16 L -15 10 L -25 10 L -25 -10 L -15 -10 L -8 -16 Z" fill="url(#otokeepGrad)"/>
+    <circle cx="0" cy="0" r="7" fill="#0F172A" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+  
+  <polygon points="64,68 62,32 64,28 66,32" fill="#FFFFFF"/>
+  <circle cx="64" cy="68" r="6" fill="#F97316" stroke="#FFFFFF" stroke-width="2"/>
+</svg>
