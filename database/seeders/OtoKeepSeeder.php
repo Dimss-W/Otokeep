@@ -13,12 +13,14 @@ class OtoKeepSeeder extends Seeder
     public function run(): void
     {
         // Admin User
-        \App\Models\User::create([
-            'name' => 'Admin OtoKeep',
-            'email' => 'admin@otokeep.com',
-            'password' => bcrypt('password'),
-            'role' => 'admin',
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['email' => 'admin@otokeep.com'],
+            [
+                'name' => 'Admin OtoKeep',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+            ]
+        );
 
         // Default Categories
         $categories = [
@@ -33,7 +35,7 @@ class OtoKeepSeeder extends Seeder
         ];
 
         foreach ($categories as $cat) {
-            \App\Models\ServiceCategory::create(['name' => $cat]);
+            \App\Models\ServiceCategory::firstOrCreate(['name' => $cat]);
         }
     }
 }
