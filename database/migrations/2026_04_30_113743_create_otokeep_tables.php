@@ -39,7 +39,7 @@ return new class extends Migration
         Schema::create('service_history', function (Blueprint $table) {
             $table->id();
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained('service_categories')->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained('service_categories')->onDelete('cascade');
             $table->date('service_date');
             $table->integer('service_km');
             $table->timestamps();

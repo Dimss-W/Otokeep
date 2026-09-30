@@ -20,13 +20,12 @@ return new class extends Migration
         }
 
         // 2. Make category_id nullable so custom outside-system services can be saved
-        try {
-            DB::statement('ALTER TABLE service_history MODIFY category_id BIGINT UNSIGNED NULL');
-        } catch (\Throwable $e) {
-            // Fallback for standard Laravel change
-            Schema::table('service_history', function (Blueprint $table) {
-                $table->foreignId('category_id')->nullable()->change();
-            });
+        if (DB::getDriverName() === 'mysql') {
+            try {
+                DB::statement('ALTER TABLE service_history MODIFY category_id BIGINT UNSIGNED NULL');
+            } catch (\Throwable $e) {
+                // ignore
+            }
         }
     }
 
