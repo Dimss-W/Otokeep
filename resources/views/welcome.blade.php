@@ -2,23 +2,16 @@
 
 @section('content')
 <div class="relative min-h-screen flex flex-col bg-[#F8FAFC]">
-    <!-- HERO SECTION (Single static background with bg.jpg, fully responsive) -->
-    <header class="relative w-full overflow-hidden bg-[#771011]">
-        <!-- Background: bg.jpg Fitted to Screen -->
+    <!-- HERO SECTION (Fit like original photo across all devices, zero sidebars, all cars visible) -->
+    <header class="relative w-full overflow-hidden bg-[#861F20]">
+        <!-- Background: bg.jpg Responsive Fit (object-contain on mobile, object-cover on desktop) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none -z-0">
-            <!-- Smooth Top Red Atmosphere -->
-            <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#771011] via-[#771011]/80 to-transparent pointer-events-none z-1"></div>
-
-            <!-- Responsive Fitted Image Container -->
-            <div class="absolute bottom-0 left-0 right-0 w-full h-[220px] sm:h-[300px] md:h-[390px] lg:h-full flex items-end justify-center pointer-events-none">
-                <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full max-w-7xl h-full object-contain object-bottom select-none">
-            </div>
-
-            <!-- Subtle Vignette Overlay for Depth -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none"></div>
+            <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full h-full object-contain md:object-cover object-bottom select-none">
+            <!-- Subtle Vignette for Text Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 pointer-events-none"></div>
         </div>
 
-        <!-- Navigation (Sticky in document flow - never overlaps hero content) -->
+        <!-- Navigation (Sticky in document flow) -->
         <nav class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 bg-white/90 backdrop-blur-md transition-all border-b border-white/10">
             <div class="max-w-7xl mx-auto flex justify-between items-center bg-white/95 backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 rounded-2xl border border-slate-200/80 shadow-soft-sm">
                 <a href="/" class="flex items-center gap-2">
@@ -43,23 +36,23 @@
             </div>
         </nav>
 
-        <!-- Hero Content (Calibrated padding so cars are 100% visible on mobile & web) -->
-        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-4 sm:pt-8 md:pt-12 pb-[230px] sm:pb-[310px] md:pb-[400px] lg:pb-44 w-full">
+        <!-- Hero Text Content (Positioned in Upper Space with pb-60 to pb-80 so cars fit cleanly at bottom) -->
+        <main class="relative z-10 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-4 sm:pt-8 md:pt-12 pb-56 sm:pb-64 md:pb-72 lg:pb-80 w-full">
             <!-- Badge -->
-            <div class="mb-3 sm:mb-5">
+            <div class="mb-3 sm:mb-4">
                 <span class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1 sm:py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-[11px] sm:text-sm font-bold border border-white/30 shadow-md">
                     <i class="ph-fill ph-sparkle text-amber-300"></i> #1 Kendaraan Maintenance Tracker
                 </span>
             </div>
 
             <!-- Slogan Headline -->
-            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-5 leading-tight sm:leading-[1.15] tracking-tight">
+            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 leading-tight sm:leading-[1.15] tracking-tight">
                 <span class="text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] font-black">Gak Ada Lagi</span> <br>
                 <span class="text-amber-300 drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)] font-black">Drama Lupa Servis</span>
             </h1>
 
             <!-- Subtitle Description -->
-            <p class="text-xs sm:text-base md:text-lg font-medium mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] px-2">
+            <p class="text-xs sm:text-base md:text-lg font-medium mb-5 sm:mb-7 max-w-xl mx-auto leading-relaxed text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] px-2">
                 Pantau kondisi kendaraan kesayangan Anda secara real-time. Dapatkan pengingat servis cerdas dan tips perawatan ahli dalam satu genggaman modern.
             </p>
             
