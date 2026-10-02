@@ -9,16 +9,22 @@
             <div id="hero-slider" class="relative w-full h-full">
                 <!-- Slide 1: bg2 (City Skyline Fleet) - Starts Active with exact seamless sky color #86B0DA -->
                 <div id="slide-bg2" class="absolute inset-0 w-full h-full transform translate-x-0 opacity-100 will-change-transform bg-[#86B0DA] overflow-hidden">
-                    <img src="{{ asset('assets/images/bg2.jpg') }}" alt="Armada Kendaraan OtoKeep" class="w-full h-full object-contain object-bottom select-none">
+                    <!-- Responsive Fitted Image Container -->
+                    <div class="absolute bottom-0 left-0 right-0 w-full h-[220px] sm:h-[290px] md:h-[380px] lg:h-full flex items-end justify-center pointer-events-none">
+                        <img src="{{ asset('assets/images/bg2.jpg') }}" alt="Armada Kendaraan OtoKeep" class="w-full max-w-7xl h-full object-contain object-bottom select-none">
+                    </div>
                     <!-- Smooth Top Sky Blend -->
-                    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#86B0DA] via-[#86B0DA]/60 to-transparent pointer-events-none"></div>
+                    <div class="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#86B0DA] via-[#86B0DA]/70 to-transparent pointer-events-none"></div>
                 </div>
 
                 <!-- Slide 2: bg (Red Crimson Fleet) - Next in Queue with exact seamless red color #861F20 -->
                 <div id="slide-bg" class="absolute inset-0 w-full h-full transform -translate-x-full opacity-0 will-change-transform bg-[#861F20] overflow-hidden">
-                    <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full h-full object-contain object-bottom select-none">
+                    <!-- Responsive Fitted Image Container -->
+                    <div class="absolute bottom-0 left-0 right-0 w-full h-[220px] sm:h-[290px] md:h-[380px] lg:h-full flex items-end justify-center pointer-events-none">
+                        <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full max-w-7xl h-full object-contain object-bottom select-none">
+                    </div>
                     <!-- Smooth Top Red Blend -->
-                    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#861F20] via-[#861F20]/70 to-transparent pointer-events-none"></div>
+                    <div class="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#861F20] via-[#861F20]/75 to-transparent pointer-events-none"></div>
                 </div>
 
                 <!-- Subtle Bottom Ground Shadow (Never obscures tires) -->
@@ -51,8 +57,8 @@
             </div>
         </nav>
 
-        <!-- Hero Content (Positioned in Upper Space with pb-60 sm:pb-56 so cars fit cleanly below on mobile without cutoff) -->
-        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-3 sm:pt-8 md:pt-12 pb-60 sm:pb-56 md:pb-44 w-full">
+        <!-- Hero Content (Responsive padding calibrated to image height on mobile & web) -->
+        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-3 sm:pt-8 md:pt-12 pb-[230px] sm:pb-[300px] md:pb-[390px] lg:pb-40 w-full">
             <!-- Content Box with smooth crossfade transition -->
             <div id="hero-text-box" class="transition-all duration-300 transform translate-y-0 opacity-100 flex flex-col items-center w-full">
                 <!-- Badge -->
