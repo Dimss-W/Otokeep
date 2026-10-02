@@ -7,28 +7,30 @@
         <!-- Dynamic Hero Background Slider (Fills 100% of header wrapper) -->
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none -z-0">
             <div id="hero-slider" class="relative w-full h-full">
-                <!-- Slide 1: bg2 (City Skyline Fleet) - Starts Active -->
-                <div id="slide-bg2" class="absolute inset-0 w-full h-full transform translate-x-0 opacity-100 will-change-transform bg-gradient-to-b from-[#1E5D9E] via-[#5C8FB8] to-[#D5E3EE] overflow-hidden">
+                <!-- Slide 1: bg2 (City Skyline Fleet) - Starts Active with exact seamless sky color #86B0DA -->
+                <div id="slide-bg2" class="absolute inset-0 w-full h-full transform translate-x-0 opacity-100 will-change-transform bg-[#86B0DA] overflow-hidden">
                     <img src="{{ asset('assets/images/bg2.jpg') }}" alt="Armada Kendaraan OtoKeep" class="w-full h-full object-contain object-bottom select-none">
-                    <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/25 to-transparent"></div>
+                    <!-- Smooth Top Sky Blend -->
+                    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#86B0DA] via-[#86B0DA]/60 to-transparent pointer-events-none"></div>
                 </div>
 
-                <!-- Slide 2: bg (Red Crimson Fleet) - Next in Queue (Fitted cleanly on #771011) -->
-                <div id="slide-bg" class="absolute inset-0 w-full h-full transform -translate-x-full opacity-0 will-change-transform bg-[#771011] overflow-hidden">
+                <!-- Slide 2: bg (Red Crimson Fleet) - Next in Queue with exact seamless red color #861F20 -->
+                <div id="slide-bg" class="absolute inset-0 w-full h-full transform -translate-x-full opacity-0 will-change-transform bg-[#861F20] overflow-hidden">
                     <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full h-full object-contain object-bottom select-none">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35"></div>
+                    <!-- Smooth Top Red Blend -->
+                    <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#861F20] via-[#861F20]/70 to-transparent pointer-events-none"></div>
                 </div>
 
-                <!-- Bottom Gradient Fade into Body -->
-                <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#F8FAFC]/80 to-transparent pointer-events-none"></div>
+                <!-- Subtle Bottom Ground Shadow (Never obscures tires) -->
+                <div class="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none"></div>
             </div>
         </div>
 
         <!-- Navigation (Sticky in document flow - never overlaps hero content) -->
-        <nav class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-4 bg-white/75 backdrop-blur-md transition-all">
-            <div class="max-w-7xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border border-slate-200/80 shadow-soft-sm">
+        <nav class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2 sm:py-3.5 bg-white/80 backdrop-blur-md transition-all">
+            <div class="max-w-7xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 rounded-2xl border border-slate-200/80 shadow-soft-sm">
                 <a href="/" class="flex items-center gap-2">
-                    <img src="{{ asset('assets/images/otokeep-logo-horizontal.png') }}?v=5" alt="OtoKeep Logo" class="h-7 sm:h-10 w-auto object-contain">
+                    <img src="{{ asset('assets/images/otokeep-logo-horizontal.png') }}?v=5" alt="OtoKeep Logo" class="h-7 sm:h-9 w-auto object-contain">
                 </a>
                 <div class="flex items-center gap-2 sm:gap-3">
                     @auth
@@ -43,18 +45,18 @@
                         @endif
                     @else
                         <a href="{{ route('login') }}" class="text-slate-600 hover:text-blue-600 font-semibold px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm transition-colors">Masuk</a>
-                        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm whitespace-nowrap">Daftar Sekarang</a>
+                        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm whitespace-nowrap">Daftar Sekarang</a>
                     @endauth
                 </div>
             </div>
         </nav>
 
-        <!-- Hero Content (Positioned in Upper Space with pb-48 sm:pb-36 so cars fit cleanly below on mobile) -->
-        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-4 sm:pt-10 md:pt-14 pb-48 sm:pb-36 md:pb-40 w-full">
+        <!-- Hero Content (Positioned in Upper Space with pb-60 sm:pb-56 so cars fit cleanly below on mobile without cutoff) -->
+        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-3 sm:pt-8 md:pt-12 pb-60 sm:pb-56 md:pb-44 w-full">
             <!-- Content Box with smooth crossfade transition -->
             <div id="hero-text-box" class="transition-all duration-300 transform translate-y-0 opacity-100 flex flex-col items-center w-full">
                 <!-- Badge -->
-                <div class="mb-3 sm:mb-6">
+                <div class="mb-2.5 sm:mb-4">
                     <span id="hero-badge" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/90 backdrop-blur-md text-blue-700 rounded-full text-[11px] sm:text-sm font-bold border border-blue-200/80 shadow-soft-sm transition-all duration-500">
                         <i id="hero-badge-icon" class="ph-fill ph-sparkle text-blue-500"></i>
                         <span id="hero-badge-text">#1 Kendaraan Maintenance Tracker</span>
@@ -62,18 +64,18 @@
                 </div>
 
                 <!-- Slogan Headline -->
-                <h1 id="hero-title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-6 leading-tight sm:leading-[1.15] tracking-tight transition-all duration-500">
+                <h1 id="hero-title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 sm:mb-4 leading-tight sm:leading-[1.15] tracking-tight transition-all duration-500">
                     <span id="hero-title-prefix" class="text-slate-900 transition-colors duration-500">Gak Ada Lagi</span> <br>
                     <span id="hero-title-accent" class="text-blue-600 transition-colors duration-500">Drama Lupa Servis</span>
                 </h1>
 
                 <!-- Subtitle Description -->
-                <p id="hero-subtitle" class="text-xs sm:text-base md:text-lg font-medium mb-5 sm:mb-8 max-w-xl mx-auto leading-relaxed transition-all duration-500 text-slate-700 px-2">
+                <p id="hero-subtitle" class="text-xs sm:text-base md:text-lg font-medium mb-4 sm:mb-6 max-w-xl mx-auto leading-relaxed transition-all duration-500 text-slate-700 px-2">
                     Pantau kondisi kendaraan kesayangan Anda secara real-time. Dapatkan pengingat servis cerdas dan tips perawatan ahli dalam satu genggaman modern.
                 </p>
                 
                 <!-- CTA Buttons -->
-                <div id="hero-cta-box" class="flex flex-col sm:flex-row gap-2.5 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none transition-all duration-500">
+                <div id="hero-cta-box" class="flex flex-col sm:flex-row gap-2 sm:gap-3.5 justify-center items-center w-full max-w-xs sm:max-w-none transition-all duration-500">
                     <a id="hero-btn-primary" href="{{ route('register') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2">
                         Mulai Sekarang <i class="ph-bold ph-arrow-right"></i>
                     </a>
@@ -84,15 +86,15 @@
             </div>
 
             <!-- Slide Indicator Pills -->
-            <div class="flex items-center gap-2 mt-5 sm:mt-8 z-20">
+            <div class="flex items-center gap-2 mt-4 sm:mt-6 z-20">
                 <button type="button" onclick="goToHeroSlide(0)" id="dot-0" class="hero-slide-dot h-2 w-8 rounded-full bg-brand-600 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 1 (bg2)"></button>
                 <button type="button" onclick="goToHeroSlide(1)" id="dot-1" class="hero-slide-dot h-2 w-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 2 (bg)"></button>
             </div>
         </main>
     </header>
 
-    <!-- Fitur Unggulan Platform Showcase -->
-    <section id="features" class="relative z-10 w-full max-w-5xl px-4 sm:px-6 mx-auto mb-16 sm:mb-20 -mt-4 sm:-mt-6">
+    <!-- Fitur Unggulan Platform Showcase (Clean separation, no negative margin cutoffs) -->
+    <section id="features" class="relative z-10 w-full max-w-5xl px-4 sm:px-6 mx-auto mb-16 sm:mb-20 mt-6 sm:mt-10 md:mt-14">
         <div class="bg-white p-4 md:p-6 rounded-[2rem] shadow-soft-xl border border-slate-200/80">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Feature 1: AI Speedometer Scanner & Web Push -->
