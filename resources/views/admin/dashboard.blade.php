@@ -386,14 +386,14 @@
                     {
                         label: 'Armada Motor',
                         data: initialTrendSlice.map(f => f.motor),
-                        borderColor: '#2563EB',
-                        backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                        borderColor: '#830000',
+                        backgroundColor: 'rgba(131, 0, 0, 0.08)',
                         borderWidth: 2.5,
                         tension: 0.35,
                         fill: true,
                         pointRadius: 2.5,
                         pointHoverRadius: 5,
-                        pointBackgroundColor: '#2563EB'
+                        pointBackgroundColor: '#830000'
                     },
                     {
                         label: 'Armada Mobil',
@@ -583,7 +583,7 @@
                         allOdoData.all.active,
                         allOdoData.all.high
                     ],
-                    backgroundColor: ['#10B981', '#2563EB', '#F59E0B', '#F43F5E'],
+                    backgroundColor: ['#10B981', '#830000', '#F59E0B', '#F43F5E'],
                     borderColor: '#FFFFFF',
                     borderWidth: 3,
                     hoverOffset: 6
@@ -691,8 +691,8 @@
             typeChart.data.datasets[0].data = items.map(t => t.aggregate);
             
             if (category === 'motor') {
-                typeChart.data.datasets[0].backgroundColor = 'rgba(37, 99, 235, 0.85)';
-                typeChart.data.datasets[0].borderColor = '#2563EB';
+                typeChart.data.datasets[0].backgroundColor = 'rgba(131, 0, 0, 0.85)';
+                typeChart.data.datasets[0].borderColor = '#830000';
             } else if (category === 'mobil') {
                 typeChart.data.datasets[0].backgroundColor = 'rgba(14, 165, 233, 0.85)';
                 typeChart.data.datasets[0].borderColor = '#0EA5E9';

@@ -565,8 +565,8 @@
                     datasets: [{
                         label: 'Pengeluaran (Rp)',
                         data: @json($analytics['monthlyValues']),
-                        backgroundColor: 'rgba(37, 99, 235, 0.85)',
-                        hoverBackgroundColor: '#1D4ED8',
+                        backgroundColor: 'rgba(131, 0, 0, 0.85)',
+                        hoverBackgroundColor: '#6C0000',
                         borderRadius: 8,
                         maxBarThickness: 28
                     }]
@@ -618,7 +618,7 @@
                     labels: @json($analytics['categoryLabels']),
                     datasets: [{
                         data: @json($analytics['categoryValues']),
-                        backgroundColor: ['#2563EB', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'],
+                        backgroundColor: ['#830000', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'],
                         borderColor: '#FFFFFF',
                         borderWidth: 2,
                         hoverOffset: 6

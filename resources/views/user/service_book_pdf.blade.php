@@ -14,6 +14,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            50: '#FEF2F2',
+                            100: '#FDE8E8',
+                            200: '#FCD9D9',
+                            300: '#F8A9A9',
+                            400: '#BE2222',
+                            500: '#A81010',
+                            600: '#830000',
+                            700: '#6C0000',
+                            800: '#550000',
+                            900: '#3D0000',
+                        },
+                        indigo: {
+                            500: '#A81010',
+                            600: '#6C0000',
+                            700: '#550000',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>

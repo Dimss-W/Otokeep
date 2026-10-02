@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F8FAFC">
+    <meta name="theme-color" content="#830000">
     <title>{{ config('app.name', 'OtoKeep') }} - Gak Ada Lagi Drama Lupa Servis</title>
 
     <!-- Official OtoKeep Vector Favicon & Touch Icons -->
@@ -31,16 +31,40 @@
                         'navy-card': '#FFFFFF',
                         'navy-light': '#F1F5F9',
                         brand: {
-                            50: '#EFF6FF',
-                            100: '#DBEAFE',
-                            500: '#3B82F6',
-                            600: '#2563EB',
-                            700: '#1D4ED8',
+                            50: '#FEF2F2',
+                            100: '#FDE8E8',
+                            200: '#FCD9D9',
+                            300: '#F8A9A9',
+                            400: '#BE2222',
+                            500: '#A81010',
+                            600: '#830000',
+                            700: '#6C0000',
+                            800: '#550000',
+                            900: '#3D0000',
                         },
-                        // Fresh Emerald / Royal Blue Modern Light Palette
-                        orange: '#2563EB',
-                        'orange-hover': '#1D4ED8',
-                        'orange-glow': 'rgba(37, 99, 235, 0.15)',
+                        blue: {
+                            50: '#FEF2F2',
+                            100: '#FDE8E8',
+                            200: '#FCD9D9',
+                            300: '#F8A9A9',
+                            400: '#BE2222',
+                            500: '#A81010',
+                            600: '#830000',
+                            700: '#6C0000',
+                            800: '#550000',
+                            900: '#3D0000',
+                        },
+                        indigo: {
+                            50: '#FEF2F2',
+                            100: '#FDE8E8',
+                            200: '#FCD9D9',
+                            500: '#A81010',
+                            600: '#6C0000',
+                            700: '#550000',
+                        },
+                        orange: '#830000',
+                        'orange-hover': '#6C0000',
+                        'orange-glow': 'rgba(131, 0, 0, 0.15)',
                         emerald: {
                             50: '#ECFDF5',
                             100: '#D1FAE5',
@@ -66,7 +90,7 @@
                         'soft-md': '0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03)',
                         'soft-lg': '0 10px 25px -4px rgba(15, 23, 42, 0.06), 0 8px 12px -6px rgba(15, 23, 42, 0.04)',
                         'soft-xl': '0 20px 35px -8px rgba(15, 23, 42, 0.08), 0 12px 16px -8px rgba(15, 23, 42, 0.04)',
-                        'glow-brand': '0 8px 20px -4px rgba(37, 99, 235, 0.3)',
+                        'glow-brand': '0 8px 20px -4px rgba(131, 0, 0, 0.35)',
                         'glow-emerald': '0 8px 20px -4px rgba(16, 185, 129, 0.25)',
                     }
                 }
@@ -113,10 +137,10 @@
         body {
             background-color: #F8FAFC;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, rgba(131, 0, 0, 0.05) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.07) 0px, transparent 45%),
-                radial-gradient(at 50% 35%, rgba(99, 102, 241, 0.04) 0px, transparent 60%),
-                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.07) 0px, transparent 50%),
+                radial-gradient(at 50% 35%, rgba(131, 0, 0, 0.03) 0px, transparent 60%),
+                radial-gradient(at 100% 100%, rgba(131, 0, 0, 0.04) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.05) 0px, transparent 45%);
             background-attachment: fixed;
             color: #0F172A;
@@ -167,7 +191,7 @@
         .card-interactive:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.07), 0 3px 8px -2px rgba(15, 23, 42, 0.03);
-            border-color: rgba(37, 99, 235, 0.3);
+            border-color: rgba(131, 0, 0, 0.3);
         }
         .card-interactive:active {
             transform: translateY(0);
