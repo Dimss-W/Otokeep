@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <button onclick="document.getElementById('modal-add-rec').classList.remove('hidden')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-sm flex items-center gap-2 text-sm">
+            <button onclick="document.getElementById('modal-add-rec').classList.remove('hidden')" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-md shadow-brand-500/20 flex items-center gap-2 text-sm">
                 <i class="ph-bold ph-plus"></i>
                 <span class="hidden sm:inline">Tambah Konten</span>
             </button>
@@ -30,7 +30,7 @@
         <main class="flex-1 p-6 md:p-8 lg:p-10 space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($recommendations as $rec)
-                    <div class="bg-white overflow-hidden rounded-3xl border border-slate-200/80 relative group flex flex-col hover:border-emerald-500/40 hover:shadow-soft-md transition-all shadow-soft-sm">
+                    <div class="bg-white overflow-hidden rounded-3xl border border-slate-200/80 relative group flex flex-col hover:border-brand-500/40 hover:shadow-soft-md transition-all shadow-soft-sm">
                         @if($rec->image)
                             <img src="{{ asset($rec->image) }}" class="w-full h-48 object-cover border-b border-slate-100" alt="{{ $rec->title }}">
                         @else
@@ -75,7 +75,7 @@
                         <i class="ph ph-article text-5xl text-slate-300 mb-3 block"></i>
                         <h4 class="text-base font-bold text-slate-800">Belum ada artikel rekomendasi.</h4>
                         <p class="text-xs text-slate-500 mt-1 mb-4">Tambahkan panduan perawatan untuk membantu pemilik kendaraan merawat mesin mereka.</p>
-                        <button onclick="document.getElementById('modal-add-rec').classList.remove('hidden')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-sm">
+                        <button onclick="document.getElementById('modal-add-rec').classList.remove('hidden')" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-brand-500/20">
                             Tambah Konten Pertama
                         </button>
                     </div>
@@ -123,7 +123,7 @@
             </div>
             <div>
                 <label class="block text-xs font-semibold text-slate-700 mb-2">Gambar Sampul (Opsional)</label>
-                <input type="file" name="image" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3 text-slate-700 text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-600 file:text-white hover:file:bg-emerald-700">
+                <input type="file" name="image" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 px-3 text-slate-700 text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-600 file:text-white hover:file:bg-brand-700">
             </div>
             <div>
                 <label class="block text-xs font-semibold text-slate-700 mb-2">Judul Artikel</label>
@@ -135,7 +135,7 @@
             </div>
             <div class="flex gap-3 pt-4">
                 <button type="button" onclick="document.getElementById('modal-add-rec').classList.add('hidden')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 rounded-xl transition-all text-sm">Batal</button>
-                <button type="submit" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-sm text-sm">Simpan Konten</button>
+                <button type="submit" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-brand-500/20 text-sm">Simpan Konten</button>
             </div>
         </form>
     </div>

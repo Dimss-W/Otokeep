@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <button onclick="document.getElementById('modal-add-cat').classList.remove('hidden')" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-md shadow-blue-500/20 flex items-center gap-2 text-sm">
+            <button onclick="document.getElementById('modal-add-cat').classList.remove('hidden')" class="bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-md shadow-brand-500/20 flex items-center gap-2 text-sm">
                 <i class="ph-bold ph-plus"></i>
                 <span class="hidden sm:inline">Tambah Kategori</span>
             </button>
@@ -170,7 +170,7 @@
             </div>
             <div class="flex gap-3">
                 <button type="button" onclick="document.getElementById('modal-add-cat').classList.add('hidden')" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 rounded-xl transition-all text-sm">Batal</button>
-                <button type="submit" class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-blue-500/20 text-sm">Simpan</button>
+                <button type="submit" class="flex-1 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-brand-500/20 text-sm">Simpan</button>
             </div>
         </form>
     </div>
@@ -213,7 +213,7 @@
             </div>
             <div class="flex gap-3">
                 <button type="button" onclick="closeEditCategoryModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 rounded-xl transition-all text-sm">Batal</button>
-                <button type="submit" class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-blue-500/20 text-sm">Simpan Perubahan</button>
+                <button type="submit" class="flex-1 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-brand-500/20 text-sm">Simpan Perubahan</button>
             </div>
         </form>
     </div>

@@ -246,7 +246,7 @@
                             <!-- Category Filter Transmisi -->
                             <div class="flex justify-end">
                                 <div class="flex items-center gap-1 bg-slate-50 border border-slate-200/80 p-0.5 rounded-lg text-[11px]">
-                                    <button type="button" onclick="switchVehicleTypeCategory('all')" id="btn-type-all" class="px-2 py-0.5 font-bold rounded bg-white text-emerald-700 shadow-xs">Semua</button>
+                                    <button type="button" onclick="switchVehicleTypeCategory('all')" id="btn-type-all" class="px-2 py-0.5 font-bold rounded bg-white text-brand-700 shadow-xs">Semua</button>
                                     <button type="button" onclick="switchVehicleTypeCategory('motor')" id="btn-type-motor" class="px-2 py-0.5 font-bold rounded text-slate-500 hover:text-slate-800">Motor</button>
                                     <button type="button" onclick="switchVehicleTypeCategory('mobil')" id="btn-type-mobil" class="px-2 py-0.5 font-bold rounded text-slate-500 hover:text-slate-800">Mobil</button>
                                 </div>
@@ -258,7 +258,7 @@
 
                             <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                                 <span>Perbandingan Transmisi</span>
-                                <span id="type-badge-count" class="text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full font-bold border border-emerald-200 font-mono">{{ count($typeStats['all']) }} Varian</span>
+                                <span id="type-badge-count" class="text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full font-bold border border-brand-200 font-mono">{{ count($typeStats['all']) }} Varian</span>
                             </div>
                         </div>
 
@@ -286,9 +286,9 @@
                 </div>
 
                 <!-- Card Konten 2: CMS Rekomendasi & Tips -->
-                <div class="bg-white p-5 rounded-2xl border border-slate-200/80 hover:border-emerald-500/30 hover:shadow-soft-md transition-all shadow-soft-sm flex items-center justify-between">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200/80 hover:border-brand-500/30 hover:shadow-soft-md transition-all shadow-soft-sm flex items-center justify-between">
                     <div class="flex items-center gap-3.5">
-                        <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center text-xl shrink-0">
+                        <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center text-xl shrink-0">
                             <i class="ph-bold ph-article"></i>
                         </div>
                         <div>
@@ -296,7 +296,7 @@
                             <p class="text-xs text-slate-500">Artikel edukasi dan tips teknis kendaraan.</p>
                         </div>
                     </div>
-                    <a href="{{ route('admin.recommendations') }}" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1 shrink-0">
+                    <a href="{{ route('admin.recommendations') }}" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1 shrink-0">
                         <span>Buka</span> <i class="ph-bold ph-arrow-right"></i>
                     </a>
                 </div>
@@ -350,7 +350,7 @@
         } else {
             panelOdo.classList.add('hidden');
             panelTrans.classList.remove('hidden');
-            btnTrans.className = 'px-2.5 py-1 text-xs font-bold rounded-lg transition-all bg-white text-emerald-700 shadow-sm';
+            btnTrans.className = 'px-2.5 py-1 text-xs font-bold rounded-lg transition-all bg-white text-brand-700 shadow-sm';
             btnOdo.className = 'px-2.5 py-1 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-900';
             if (subtitle) subtitle.innerText = 'Proporsi jenis transmisi matic dan manual armada.';
             if (typeChart) typeChart.resize();
@@ -707,7 +707,7 @@
         if (badge) badge.innerText = `${items.length} Varian`;
         
         if (changePill) {
-            setActivePill(`btn-type-${category}`, ['btn-type-all', 'btn-type-motor', 'btn-type-mobil'], 'bg-white text-emerald-700 shadow-xs');
+            setActivePill(`btn-type-${category}`, ['btn-type-all', 'btn-type-motor', 'btn-type-mobil'], 'bg-white text-brand-700 shadow-xs');
         }
     }
 
