@@ -2,94 +2,97 @@
 
 @section('content')
 <div class="relative min-h-screen flex flex-col bg-transparent">
-    <!-- Dynamic Hero Background Slider (Slide Right: bg2 -> bg) -->
-    <div class="absolute top-0 left-0 right-0 h-[680px] sm:h-[740px] md:h-[800px] overflow-hidden -z-0 pointer-events-none select-none">
-        <div id="hero-slider" class="relative w-full h-full">
-            <!-- Slide 1: bg2 (City Skyline Fleet) - Starts Active -->
-            <div id="slide-bg2" class="absolute inset-0 w-full h-full transform translate-x-0 opacity-100 will-change-transform bg-gradient-to-b from-[#1E5D9E] via-[#5C8FB8] to-[#D5E3EE] overflow-hidden">
-                <img src="{{ asset('assets/images/bg2.jpg') }}" alt="Armada Kendaraan OtoKeep" class="w-full h-full object-contain object-bottom select-none">
-                <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/30 to-transparent"></div>
-            </div>
+    <!-- HERO SECTION WRAPPER (Auto-fits mobile & desktop naturally) -->
+    <header class="relative w-full overflow-hidden flex flex-col justify-between">
+        <!-- Dynamic Hero Background Slider (Fills 100% of header wrapper) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none select-none -z-0">
+            <div id="hero-slider" class="relative w-full h-full">
+                <!-- Slide 1: bg2 (City Skyline Fleet) - Starts Active -->
+                <div id="slide-bg2" class="absolute inset-0 w-full h-full transform translate-x-0 opacity-100 will-change-transform bg-gradient-to-b from-[#1E5D9E] via-[#5C8FB8] to-[#D5E3EE] overflow-hidden">
+                    <img src="{{ asset('assets/images/bg2.jpg') }}" alt="Armada Kendaraan OtoKeep" class="w-full h-full object-contain object-bottom select-none">
+                    <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-white/25 to-transparent"></div>
+                </div>
 
-            <!-- Slide 2: bg (Red Crimson Fleet) - Next in Queue (Fitted cleanly on #771011) -->
-            <div id="slide-bg" class="absolute inset-0 w-full h-full transform -translate-x-full opacity-0 will-change-transform bg-[#771011] overflow-hidden">
-                <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full h-full object-contain object-bottom select-none">
-                <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35"></div>
-            </div>
+                <!-- Slide 2: bg (Red Crimson Fleet) - Next in Queue (Fitted cleanly on #771011) -->
+                <div id="slide-bg" class="absolute inset-0 w-full h-full transform -translate-x-full opacity-0 will-change-transform bg-[#771011] overflow-hidden">
+                    <img src="{{ asset('assets/images/bg.jpg') }}" alt="Armada OtoKeep Premium" class="w-full h-full object-contain object-bottom select-none">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35"></div>
+                </div>
 
-            <!-- Bottom Gradient Fade into Body -->
-            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#F8FAFC] to-transparent pointer-events-none"></div>
+                <!-- Bottom Gradient Fade into Body -->
+                <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#F8FAFC]/80 to-transparent pointer-events-none"></div>
+            </div>
         </div>
-    </div>
 
-    <!-- Navigation (Sticky in document flow - never overlaps hero content) -->
-    <nav class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 bg-white/75 backdrop-blur-md transition-all">
-        <div class="max-w-7xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur-xl px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl border border-slate-200/80 shadow-soft-sm">
-            <a href="/" class="flex items-center gap-2">
-                <img src="{{ asset('assets/images/otokeep-logo-horizontal.png') }}?v=5" alt="OtoKeep Logo" class="h-8 sm:h-10 w-auto object-contain">
-            </a>
-            <div class="flex items-center gap-2 sm:gap-3">
-                @auth
-                    @if(auth()->user()->role === 'admin')
-                        <a href="{{ route('admin.dashboard') }}" class="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 rounded-xl border border-blue-200 text-xs sm:text-sm">
-                            <i class="ph-bold ph-shield-check text-base sm:text-lg"></i>
-                            <span class="hidden sm:inline">Dashboard Admin</span>
-                            <span class="sm:hidden">Admin</span>
-                        </a>
+        <!-- Navigation (Sticky in document flow - never overlaps hero content) -->
+        <nav class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-4 bg-white/75 backdrop-blur-md transition-all">
+            <div class="max-w-7xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-3 rounded-2xl border border-slate-200/80 shadow-soft-sm">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="{{ asset('assets/images/otokeep-logo-horizontal.png') }}?v=5" alt="OtoKeep Logo" class="h-7 sm:h-10 w-auto object-contain">
+                </a>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    @auth
+                        @if(auth()->user()->role === 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 rounded-xl border border-blue-200 text-xs sm:text-sm">
+                                <i class="ph-bold ph-shield-check text-base sm:text-lg"></i>
+                                <span class="hidden sm:inline">Dashboard Admin</span>
+                                <span class="sm:hidden">Admin</span>
+                            </a>
+                        @else
+                            <a href="{{ route('dashboard') }}" class="text-white bg-blue-600 hover:bg-blue-700 px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm">Dashboard</a>
+                        @endif
                     @else
-                        <a href="{{ route('dashboard') }}" class="text-white bg-blue-600 hover:bg-blue-700 px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm">Dashboard</a>
-                    @endif
-                @else
-                    <a href="{{ route('login') }}" class="text-slate-600 hover:text-blue-600 font-semibold px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm transition-colors">Masuk</a>
-                    <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm whitespace-nowrap">Daftar Sekarang</a>
-                @endauth
+                        <a href="{{ route('login') }}" class="text-slate-600 hover:text-blue-600 font-semibold px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm transition-colors">Masuk</a>
+                        <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-xl font-bold transition-all shadow-sm text-xs sm:text-sm whitespace-nowrap">Daftar Sekarang</a>
+                    @endauth
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Content (Positioned in Upper Space to prevent overlap with cars) -->
-    <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-8 sm:pt-12 md:pt-14 pb-16 w-full">
-        <!-- Content Box with smooth crossfade transition -->
-        <div id="hero-text-box" class="transition-all duration-300 transform translate-y-0 opacity-100 flex flex-col items-center w-full">
-            <!-- Badge -->
-            <div class="mb-4 sm:mb-6">
-                <span id="hero-badge" class="inline-flex items-center gap-1.5 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/90 backdrop-blur-md text-blue-700 rounded-full text-xs sm:text-sm font-bold border border-blue-200/80 shadow-soft-sm transition-all duration-500">
-                    <i id="hero-badge-icon" class="ph-fill ph-sparkle text-blue-500"></i>
-                    <span id="hero-badge-text">#1 Kendaraan Maintenance Tracker</span>
-                </span>
+        <!-- Hero Content (Positioned in Upper Space with pb-48 sm:pb-36 so cars fit cleanly below on mobile) -->
+        <main class="relative z-10 flex-1 flex flex-col justify-start items-center text-center px-4 sm:px-6 max-w-4xl mx-auto pt-4 sm:pt-10 md:pt-14 pb-48 sm:pb-36 md:pb-40 w-full">
+            <!-- Content Box with smooth crossfade transition -->
+            <div id="hero-text-box" class="transition-all duration-300 transform translate-y-0 opacity-100 flex flex-col items-center w-full">
+                <!-- Badge -->
+                <div class="mb-3 sm:mb-6">
+                    <span id="hero-badge" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/90 backdrop-blur-md text-blue-700 rounded-full text-[11px] sm:text-sm font-bold border border-blue-200/80 shadow-soft-sm transition-all duration-500">
+                        <i id="hero-badge-icon" class="ph-fill ph-sparkle text-blue-500"></i>
+                        <span id="hero-badge-text">#1 Kendaraan Maintenance Tracker</span>
+                    </span>
+                </div>
+
+                <!-- Slogan Headline -->
+                <h1 id="hero-title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-6 leading-tight sm:leading-[1.15] tracking-tight transition-all duration-500">
+                    <span id="hero-title-prefix" class="text-slate-900 transition-colors duration-500">Gak Ada Lagi</span> <br>
+                    <span id="hero-title-accent" class="text-blue-600 transition-colors duration-500">Drama Lupa Servis</span>
+                </h1>
+
+                <!-- Subtitle Description -->
+                <p id="hero-subtitle" class="text-xs sm:text-base md:text-lg font-medium mb-5 sm:mb-8 max-w-xl mx-auto leading-relaxed transition-all duration-500 text-slate-700 px-2">
+                    Pantau kondisi kendaraan kesayangan Anda secara real-time. Dapatkan pengingat servis cerdas dan tips perawatan ahli dalam satu genggaman modern.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div id="hero-cta-box" class="flex flex-col sm:flex-row gap-2.5 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none transition-all duration-500">
+                    <a id="hero-btn-primary" href="{{ route('register') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2">
+                        Mulai Sekarang <i class="ph-bold ph-arrow-right"></i>
+                    </a>
+                    <a id="hero-btn-secondary" href="#features" class="w-full sm:w-auto bg-white/95 hover:bg-white backdrop-blur-sm border border-slate-200 text-slate-700 px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-soft-sm flex items-center justify-center gap-2">
+                        Lihat Fitur
+                    </a>
+                </div>
             </div>
 
-            <!-- Slogan Headline -->
-            <h1 id="hero-title" class="text-3xl sm:text-5xl md:text-6xl font-black mb-4 sm:mb-6 leading-[1.18] sm:leading-[1.15] tracking-tight transition-all duration-500">
-                <span id="hero-title-prefix" class="text-slate-900 transition-colors duration-500">Gak Ada Lagi</span> <br>
-                <span id="hero-title-accent" class="text-blue-600 transition-colors duration-500">Drama Lupa Servis</span>
-            </h1>
-
-            <!-- Subtitle Description -->
-            <p id="hero-subtitle" class="text-sm sm:text-base md:text-lg font-medium mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-500 text-slate-700">
-                Pantau kondisi kendaraan kesayangan Anda secara real-time. Dapatkan pengingat servis cerdas dan tips perawatan ahli dalam satu genggaman modern.
-            </p>
-            
-            <!-- CTA Buttons -->
-            <div id="hero-cta-box" class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none transition-all duration-500">
-                <a id="hero-btn-primary" href="{{ route('register') }}" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2">
-                    Mulai Sekarang <i class="ph-bold ph-arrow-right"></i>
-                </a>
-                <a id="hero-btn-secondary" href="#features" class="w-full sm:w-auto bg-white/95 hover:bg-white backdrop-blur-sm border border-slate-200 text-slate-700 px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-soft-sm flex items-center justify-center gap-2">
-                    Lihat Fitur
-                </a>
+            <!-- Slide Indicator Pills -->
+            <div class="flex items-center gap-2 mt-5 sm:mt-8 z-20">
+                <button type="button" onclick="goToHeroSlide(0)" id="dot-0" class="hero-slide-dot h-2 w-8 rounded-full bg-brand-600 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 1 (bg2)"></button>
+                <button type="button" onclick="goToHeroSlide(1)" id="dot-1" class="hero-slide-dot h-2 w-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 2 (bg)"></button>
             </div>
-        </div>
-
-        <!-- Slide Indicator Pills -->
-        <div class="flex items-center gap-2.5 mt-8 z-20">
-            <button type="button" onclick="goToHeroSlide(0)" id="dot-0" class="hero-slide-dot h-2 w-8 rounded-full bg-brand-600 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 1 (bg2)"></button>
-            <button type="button" onclick="goToHeroSlide(1)" id="dot-1" class="hero-slide-dot h-2 w-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-500 shadow-sm cursor-pointer" title="Armada Seri 2 (bg)"></button>
-        </div>
-    </main>
+        </main>
+    </header>
 
     <!-- Fitur Unggulan Platform Showcase -->
-    <section id="features" class="relative z-10 w-full max-w-5xl px-4 sm:px-6 mx-auto mb-16 sm:mb-20">
+    <section id="features" class="relative z-10 w-full max-w-5xl px-4 sm:px-6 mx-auto mb-16 sm:mb-20 -mt-4 sm:-mt-6">
         <div class="bg-white p-4 md:p-6 rounded-[2rem] shadow-soft-xl border border-slate-200/80">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Feature 1: AI Speedometer Scanner & Web Push -->
@@ -169,33 +172,33 @@
         const slideThemes = [
             {
                 // Slide 0: bg2 (City Skyline Fleet) - Crisp Dark Typography
-                badgeClass: 'inline-flex items-center gap-1.5 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/90 backdrop-blur-md text-blue-700 rounded-full text-xs sm:text-sm font-bold border border-blue-200/80 shadow-soft-sm transition-all duration-500',
+                badgeClass: 'inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/90 backdrop-blur-md text-blue-700 rounded-full text-[11px] sm:text-sm font-bold border border-blue-200/80 shadow-soft-sm transition-all duration-500',
                 badgeIcon: 'ph-fill ph-sparkle text-blue-500',
                 badgeText: '#1 Kendaraan Maintenance Tracker',
                 titlePrefixClass: 'text-slate-900 transition-colors duration-500',
                 titlePrefixText: 'Gak Ada Lagi',
                 titleAccentClass: 'text-blue-600 transition-colors duration-500',
                 titleAccentText: 'Drama Lupa Servis',
-                subtitleClass: 'text-sm sm:text-base md:text-lg font-medium mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-500 text-slate-700',
+                subtitleClass: 'text-xs sm:text-base md:text-lg font-medium mb-5 sm:mb-8 max-w-xl mx-auto leading-relaxed transition-all duration-500 text-slate-700 px-2',
                 subtitleText: 'Pantau kondisi kendaraan kesayangan Anda secara real-time. Dapatkan pengingat servis cerdas dan tips perawatan ahli dalam satu genggaman modern.',
-                btnPrimaryClass: 'w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2',
-                btnSecondaryClass: 'w-full sm:w-auto bg-white/95 hover:bg-white backdrop-blur-sm border border-slate-200 text-slate-700 px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-soft-sm flex items-center justify-center gap-2',
+                btnPrimaryClass: 'w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2',
+                btnSecondaryClass: 'w-full sm:w-auto bg-white/95 hover:bg-white backdrop-blur-sm border border-slate-200 text-slate-700 px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-soft-sm flex items-center justify-center gap-2',
                 dot0Class: 'hero-slide-dot h-2 w-8 rounded-full bg-brand-600 transition-all duration-500 shadow-sm cursor-pointer',
                 dot1Class: 'hero-slide-dot h-2 w-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-500 shadow-sm cursor-pointer'
             },
             {
                 // Slide 1: bg (Red Crimson Fleet) - Pure White & Luminous Amber (Anti-Nabrak)
-                badgeClass: 'inline-flex items-center gap-1.5 px-3.5 py-1 sm:px-4 sm:py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs sm:text-sm font-bold border border-white/30 shadow-md transition-all duration-500',
+                badgeClass: 'inline-flex items-center gap-1.5 px-3 sm:px-4 py-1 sm:py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-[11px] sm:text-sm font-bold border border-white/30 shadow-md transition-all duration-500',
                 badgeIcon: 'ph-fill ph-sparkle text-amber-300',
                 badgeText: 'Solusi Pemantauan Armada Terbaik',
                 titlePrefixClass: 'text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)] font-black transition-colors duration-500',
                 titlePrefixText: 'Gak Ada Lagi',
                 titleAccentClass: 'text-amber-300 drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)] font-black transition-colors duration-500',
                 titleAccentText: 'Drama Lupa Servis',
-                subtitleClass: 'text-sm sm:text-base md:text-lg font-semibold mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-all duration-500 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]',
+                subtitleClass: 'text-xs sm:text-base md:text-lg font-semibold mb-5 sm:mb-8 max-w-xl mx-auto leading-relaxed transition-all duration-500 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] px-2',
                 subtitleText: 'Kelola jadwal servis dan kesehatan seluruh unit kendaraan Anda dengan mudah. Notifikasi tepat waktu, riwayat digital lengkap, dan estimasi biaya transparan.',
-                btnPrimaryClass: 'w-full sm:w-auto bg-white hover:bg-slate-100 text-[#771011] px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-extrabold text-sm sm:text-base transition-all shadow-2xl shadow-black/40 flex items-center justify-center gap-2',
-                btnSecondaryClass: 'w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white px-7 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-sm sm:text-base transition-all shadow-md flex items-center justify-center gap-2',
+                btnPrimaryClass: 'w-full sm:w-auto bg-white hover:bg-slate-100 text-[#771011] px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-extrabold text-xs sm:text-base transition-all shadow-2xl shadow-black/40 flex items-center justify-center gap-2',
+                btnSecondaryClass: 'w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-base transition-all shadow-md flex items-center justify-center gap-2',
                 dot0Class: 'hero-slide-dot h-2 w-2.5 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-500 shadow-sm cursor-pointer',
                 dot1Class: 'hero-slide-dot h-2 w-8 rounded-full bg-white transition-all duration-500 shadow-md cursor-pointer'
             }
